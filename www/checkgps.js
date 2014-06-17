@@ -1,10 +1,10 @@
-cordova.define('cordova/plugin/gpsDetectionPlugin', function(require, exports, module) {
+cordova.define('cordova/plugin/checkgps', function(require, exports, module) {
     var exec = require('cordova/exec');
 
     var gpsDetect = function() {};
 
     gpsDetect.prototype.checkGPS = function(successCallback, failureCallback) {
-        exec(successCallback, failureCallback, 'GpsDetectionPlugin', 'gpsDetection', []);
+        exec(successCallback, failureCallback, 'CheckGps', 'gpsDetection', []);
     };
     
     var gpsDetect = new gpsDetect();

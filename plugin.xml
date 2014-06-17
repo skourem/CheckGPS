@@ -13,7 +13,7 @@
     </engines>
 
     <js-module src="www/checkgps.js" name="checkgps">
-        <clobbers target="cordova.plugins.screenorientation" />
+        <clobbers target="cordova.plugins.checkgps" />
     </js-module>
 
     <platform name="android">
