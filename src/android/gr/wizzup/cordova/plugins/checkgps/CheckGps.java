@@ -1,4 +1,4 @@
-package com.butterflyeffect.plugins;
+package gr.wizzup.cordova.plugins.checkgps;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
