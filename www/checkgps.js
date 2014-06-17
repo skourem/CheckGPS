@@ -1,4 +1,4 @@
-cordova.define('cordova/plugin/checkgps', function(require, exports, module) {
+//ordova.define('cordova/plugin/checkgps', function(require, exports, module) {
     var exec = require('cordova/exec');
 
     var gpsDetect = function() {};
@@ -9,4 +9,4 @@ cordova.define('cordova/plugin/checkgps', function(require, exports, module) {
     
     var gpsDetect = new gpsDetect();
     module.exports = gpsDetect;
-});
+//});
