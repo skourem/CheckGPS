@@ -16,15 +16,25 @@ public class CheckGps extends CordovaPlugin {
         
         PluginResult result = null;
         boolean gpsEnabled = false;
+        boolean npEnabled = false;
         String GPSDetectionAction = "gpsDetection";
+        String NPDetectionAction = "npDetection";
         
         if (action.equals(GPSDetectionAction)) {
             android.content.ContentResolver contentResolver = cordova.getActivity().getApplicationContext().getContentResolver();
             gpsEnabled = Settings.Secure.isLocationProviderEnabled(contentResolver, LocationManager.GPS_PROVIDER);
             result = new PluginResult(Status.OK, gpsEnabled);
         }
+        
         else {
-            result = new PluginResult(Status.INVALID_ACTION);
+            if (action.equals(NPDetectionAction)) {
+                android.content.ContentResolver contentResolver = cordova.getActivity().getApplicationContext().getContentResolver();
+                npEnabled = Settings.Secure.isLocationProviderEnabled(contentResolver, LocationManager.NETWORK_PROVIDER);
+                result = new PluginResult(Status.OK, npEnabled);
+            }
+            else {
+                result = new PluginResult(Status.INVALID_ACTION);
+            }
         }
         
         callbackContext.sendPluginResult(result);
