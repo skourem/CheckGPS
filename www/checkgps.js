@@ -2,6 +2,10 @@
 
     var gpsDetect = function() {};
 
+    gpsDetect.prototype.checkAll = function(successCallback, failureCallback) {
+        exec(successCallback, failureCallback, 'CheckGps', 'allDetection', []);
+    };
+
     gpsDetect.prototype.checkGPS = function(successCallback, failureCallback) {
         exec(successCallback, failureCallback, 'CheckGps', 'gpsDetection', []);
     };
